@@ -1,0 +1,8 @@
+*.pyc
+*.aux
+*.log
+*.toc
+*.swp
+*.*~
+PreggoPosts.tex
+PreggoPosts.pdf

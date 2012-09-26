@@ -1,0 +1,55 @@
+\documentclass[14pt,b5paper]{book}
+\usepackage[paperwidth=6in, paperheight=9in]{geometry}
+\usepackage[parfill]{parskip}
+\usepackage{graphicx}
+\DeclareGraphicsExtensions{.jpg}
+
+\newcommand*\cleartoleftpage{%
+  \clearpage
+  \ifodd\value{page}\hbox{}\newpage\fi
+}
+
+\renewcommand{\thechapter}{}
+\renewcommand{\chaptername}{}
+\pagestyle{myheadings}
+
+\begin{document}
+\title{Make Way for Piggies}
+\maketitle
+\tableofcontents
+\thispagestyle{empty}
+\cleardoublepage
+
+\setcounter{page}{1}
+%{- for section in sections -%}
+\chapter{%{{ section.title %}}}
+\LARGE{%{{ section.text|escape_tex %}}}
+\cleardoublepage
+
+%{- for post in section.posts -%}
+
+%{- if post.image %}
+\cleartoleftpage
+\topskip0pt
+\vspace*{\fill}
+\includegraphics[width=\textwidth]{manual/%{{ post.image %}}}
+\vspace*{\fill}
+\clearpage
+%{- endif %}
+
+\topskip0pt
+\vspace*{\fill}
+%{- if not post.text|length > 300 %}
+\vspace*{-1.5 in}
+%{- endif %}
+
+\small{%{{ post.humantimestamp %}}}
+
+\LARGE{%{{ post.text|escape_tex %}}}
+\vspace*{\fill}
+\newpage
+%{- endfor %}
+
+%{- endfor %}
+
+\end{document}
