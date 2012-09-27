@@ -1,7 +1,8 @@
-\documentclass[14pt,b5paper]{book}
+\documentclass[14pt,a5paper]{book}
 \usepackage[paperwidth=6in, paperheight=9in]{geometry}
 \usepackage[parfill]{parskip}
 \usepackage{graphicx}
+\usepackage{ellipsis}
 \DeclareGraphicsExtensions{.jpg}
 
 \newcommand*\cleartoleftpage{%
@@ -45,7 +46,7 @@
 
 \small{%{{ post.humantimestamp %}}}
 
-\LARGE{%{{ post.text|escape_tex %}}}
+\LARGE{%{{ post.text|escape_tex|hyphenate_hashtags %}}}
 \vspace*{\fill}
 \newpage
 %{- endfor %}

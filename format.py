@@ -10,7 +10,7 @@ LATEX_SUBS = (
     (re.compile(r'\^'), r'\^{}'),
     (re.compile(r'"(.*?)"'), r"``\1''"),
     (re.compile(r'"'), r"''"),
-    (re.compile(r'\.\.\.+'), r'\\ldots '),
+    (re.compile(r'\.\.\.'), r'\\dots '),
     (re.compile(r'(?<!\n)\n'), r" \\\\\n"),
 )
 
@@ -20,12 +20,23 @@ def escape_tex(value):
         newval = pattern.sub(replacement, newval)
     return newval
 
+with open('hashtag_hyphenation.json') as f:
+    HASHTAG_HYPHENATION = simplejson.load(f)
+
+HASH_RE = re.compile(r'#\w+')
+def hyphenate_hashtags(s):
+    hashtags = HASH_RE.findall(s)
+    for hashtag in hashtags:
+        s = s.replace(hashtag, HASHTAG_HYPHENATION[hashtag])
+    return s
+
 env = jinja2.Environment(block_start_string = '%{',
                          block_end_string = '%}',
                          variable_start_string = '%{{',
                          variable_end_string = '%}}',
                          loader = jinja2.FileSystemLoader(os.path.abspath('.')))
 env.filters['escape_tex'] = escape_tex
+env.filters['hyphenate_hashtags'] = hyphenate_hashtags
 
 
 fname = "MergedPosts.json"
