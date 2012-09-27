@@ -3,6 +3,7 @@
 *.log
 *.toc
 *.swp
+*.swo
 *.*~
 PreggoPosts.tex
 PreggoPosts.pdf
