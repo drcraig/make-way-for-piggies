@@ -1,28 +1,39 @@
-\documentclass[14pt,a5paper]{book}
-\usepackage[paperwidth=6in, paperheight=9in]{geometry}
-\usepackage[parfill]{parskip}
+\documentclass[11pt,ebook]{memoir}
+%\usepackage[paperwidth=6in, paperheight=9in]{geometry}
 \usepackage{graphicx}
 \usepackage{ellipsis}
 \DeclareGraphicsExtensions{.jpg}
+
+\nonzeroparskip
+\setlength{\parindent}{0pt}
 
 \newcommand*\cleartoleftpage{%
   \clearpage
   \ifodd\value{page}\hbox{}\newpage\fi
 }
 
+\copypagestyle{entry}{plain}
+  
+
 \renewcommand{\thechapter}{}
 \renewcommand{\chaptername}{}
-\pagestyle{myheadings}
+\pagestyle{plain}
 
 \begin{document}
 \title{Make Way for Piggies}
 \maketitle
+
+\frontmatter
 \tableofcontents
 \thispagestyle{empty}
 \cleardoublepage
 
+\mainmatter
+
 \setcounter{page}{1}
 %{- for section in sections -%}
+\thispagestyle{cleared}
+
 \chapter{%{{ section.title %}}}
 \LARGE{%{{ section.text|escape_tex %}}}
 \cleardoublepage
@@ -31,20 +42,22 @@
 
 %{- if post.image %}
 \cleartoleftpage
-\topskip0pt
 \vspace*{\fill}
+\vspace*{-0.65in}
 \includegraphics[width=\textwidth]{manual/%{{ post.image %}}}
 \vspace*{\fill}
 \clearpage
 %{- endif %}
 
+\thispagestyle{entry}
+\makeevenhead{entry}{%{{ post.humantimestamp %}}}{}{}
+\makeoddhead{entry}{}{}{%{{ post.humantimestamp %}}}
+
 \topskip0pt
+%{- if not post.text|length > 550 %}
 \vspace*{\fill}
-%{- if not post.text|length > 300 %}
 \vspace*{-1.5 in}
 %{- endif %}
-
-\small{%{{ post.humantimestamp %}}}
 
 \LARGE{%{{ post.text|escape_tex|hyphenate_hashtags %}}}
 \vspace*{\fill}
@@ -52,5 +65,6 @@
 %{- endfor %}
 
 %{- endfor %}
+\backmatter
 
 \end{document}
