@@ -75,6 +75,9 @@ Mountain View, California, 94041, USA.
 \thispagestyle{empty}
 \cleardoublepage
 
+\chapter{Preface}
+%{{ preface|escape_tex -%}}
+
 \mainmatter
 
 %{- for section in sections -%}
@@ -105,7 +108,7 @@ Mountain View, California, 94041, USA.
 \vspace*{-1.5 in}
 %{- endif %}
 
-\LARGE{%{{ post.text|escape_tex|hyphenate_hashtags %}}}
+\LARGE{%{{ post.text|escape_tex|newline|hyphenate_hashtags %}}}
 \vspace*{\fill}
 \newpage
 %{- endfor %}

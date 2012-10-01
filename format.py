@@ -11,7 +11,6 @@ LATEX_SUBS = (
     (re.compile(r'"(.*?)"'), r"``\1''"),
     (re.compile(r'"'), r"''"),
     (re.compile(r'\.\.\.'), r'\\dots '),
-    (re.compile(r'(?<!\n)\n'), r" \\\\\n"),
     (re.compile(r'LaTeX'), r'\\LaTeX\\'),
 )
 
@@ -19,6 +18,12 @@ def escape_tex(value):
     newval = value
     for pattern, replacement in LATEX_SUBS:
         newval = pattern.sub(replacement, newval)
+    return newval
+
+NEWLINE_SUB = (re.compile(r'(?<!\n)\n'), r" \\\\\n")
+def newline(value):
+    pattern, replacement = NEWLINE_SUB
+    newval = pattern.sub(replacement, value)
     return newval
 
 with open('hashtag_hyphenation.json') as f:
@@ -37,8 +42,8 @@ env = jinja2.Environment(block_start_string = '%{',
                          variable_end_string = '%}}',
                          loader = jinja2.FileSystemLoader(os.path.abspath('.')))
 env.filters['escape_tex'] = escape_tex
+env.filters['newline'] = newline
 env.filters['hyphenate_hashtags'] = hyphenate_hashtags
-
 
 fname = "MergedPosts.json"
 with open(fname) as f:
@@ -59,12 +64,15 @@ for i, section in enumerate(sections):
     section['posts'] = s_posts 
 sections.reverse()
 
+with open('preface.txt') as f:
+    preface = f.read()
+
 with open("context.json", 'w') as f:
     simplejson.dump(sections, f, indent=1)
 
 t = env.get_template('template.tex')
 
-tex = t.render({'sections': sections})
+tex = t.render({'sections': sections, 'preface': preface})
 with open("PreggoPosts.tex", 'w') as f:
     f.write(tex.encode('utf-8'))
 
