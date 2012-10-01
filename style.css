@@ -3,15 +3,30 @@ body > div {
 }
 
 div#main {
-    width: 70%;
+    width: 610px;
+    margin-left: 80px;
 }
 
 div#left-click, div#right-click {
     width:15%;
-    height: 100%;
+}
+
+a.page-turn {
+    display: block;
+    position: fixed;
+    top: 0;
+}
+
+a.page-turn#prev {
+    left:0;
+}
+
+a.page-turn#next {
+    right:0;
 }
 
 div.page {
+    vertical-align: top;
 }
 
 #cover {
