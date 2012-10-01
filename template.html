@@ -2,6 +2,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Make Way for Piggies</title>
+
+<script type="text/javascript" src="jquery-1.8.2.min.js"></script>
+
 <style type="text/css">
 
 body > div {
@@ -14,6 +17,14 @@ div#main {
 
 div#left-click, div#right-click {
     width:15%;
+}
+
+div.page {
+    height: 100px;
+}
+
+#cover {
+    text-align: center;
 }
 
 h2 {
@@ -36,10 +47,37 @@ h2 {
 </head>
 <body>
 
-<div id="left-click"></div>
+<div id="left-click" class="prev"></div>
 <div id="main">
 
+<div id="nav">
+<table>
+<tr>
+
+</tr>
+</table>
+</div>
+
+<div class="page_container">
+<div class="page" id="cover">
+<h1 class="title">Make Way for Piggies</h1>
+
+<div class="subtitle">
+<p>The Pregnancy of Huxley Craig</p>
+<p>as recorded in the</p>
+<p>the Facebook Posts of his Mom</p>
+<p class="author">Sally Honda</p>
+</div>
+
+<div class="edited-by">
+<p>Edited by his Dad</p>
+<p class="author">Dan Craig</p>
+</div>
+
+</div>
+
 <div class="page" id="toc">
+<h2>Contents</h2>
 <ul>
 <li><a href="#preface">Preface</a></li>
 {% for section in sections %}
@@ -85,9 +123,10 @@ h2 {
 {% endfor %}
 
 {% endfor %}
+</div>
 
 </div>
-<div id="right-click"></div>
+<div id="right-click" class="next"></div>
 
 </body>
 </html>
