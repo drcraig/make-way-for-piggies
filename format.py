@@ -45,6 +45,26 @@ env.filters['escape_tex'] = escape_tex
 env.filters['newline'] = newline
 env.filters['hyphenate_hashtags'] = hyphenate_hashtags
 
+def p(value):
+    return '<p>\n'+'</p>\n<p>'.join(value.split('\n\n'))+'\n</p>'
+
+def p_br(value):
+    chunks = value.split('\n\n')
+    new_chunks = []
+    for chunk in chunks:
+        lines = chunk.split('\n')
+        new_lines = []
+        for line in lines:
+            if len(line) < 40:
+                line += "<br />"
+            new_lines.append(line)
+        new_chunks.append('\n'.join(new_lines))
+    return '<p>\n'+'</p>\n<p>'.join(new_chunks)+'\n</p>'
+
+html_env = jinja2.Environment(loader = jinja2.FileSystemLoader(os.path.abspath('.')))
+html_env.filters['p'] = p
+html_env.filters['p_br'] = p_br
+
 fname = "MergedPosts.json"
 with open(fname) as f:
     posts = simplejson.load(f)
@@ -67,14 +87,22 @@ sections.reverse()
 with open('preface.txt') as f:
     preface = f.read()
 
+context = {'sections': sections, 'preface': preface}
+
 with open("context.json", 'w') as f:
-    simplejson.dump(sections, f, indent=1)
+    simplejson.dump(context, f, indent=1)
 
 t = env.get_template('template.tex')
 
-tex = t.render({'sections': sections, 'preface': preface})
+tex = t.render(context)
 with open("PreggoPosts.tex", 'w') as f:
     f.write(tex.encode('utf-8'))
+
+html_template = html_env.get_template('template.html')
+html = html_template.render(context)
+
+with open("PreggoPosts.html", 'w') as f:
+    f.write(html.encode('utf-8'))
 
 #print tex
 #print len(posts)
