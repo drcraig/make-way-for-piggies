@@ -48,6 +48,13 @@ env.filters['hyphenate_hashtags'] = hyphenate_hashtags
 def p(value):
     return '<p>\n'+'</p>\n<p>'.join(value.split('\n\n'))+'\n</p>'
 
+SLUG_CHARS_SUB = (re.compile('[^A-Za-z0-9 ]'), '')
+def slugify(value):
+    pattern, replacement = SLUG_CHARS_SUB
+    newval = pattern.sub(replacement, value)
+    newval = newval.replace(' ', '-')
+    return newval
+
 def p_br(value):
     chunks = value.split('\n\n')
     new_chunks = []
@@ -64,6 +71,7 @@ def p_br(value):
 html_env = jinja2.Environment(loader = jinja2.FileSystemLoader(os.path.abspath('.')))
 html_env.filters['p'] = p
 html_env.filters['p_br'] = p_br
+html_env.filters['slugify'] = slugify
 
 fname = "MergedPosts.json"
 with open(fname) as f:
