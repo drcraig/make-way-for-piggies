@@ -51,12 +51,6 @@ $(document).ready( function() {
     event.preventDefault();
     setCurrentPage(event.currentTarget.hash); 
   });
-
-  $("a").click(function(event){
-    event.preventDefault();
-    console.log(event);
-  });
-    
 });
 
 
