@@ -13,11 +13,23 @@
 <div id="main">
 
 <div id="nav">
-<table>
-<tr>
+<div id="top-title">
+<a href="">Make Way for Piggies</a>
+</div>
 
-</tr>
-</table>
+<div id="progress">
+<ul>
+<li id="progress-cover"><a href="#cover"><span></span></a></li>
+<li id="progress-toc"><a href="#toc"><span></span></a></li>
+<li id="progress-preface"><a href="#preface"><span></span></a></li>
+{% for section in sections %}
+<li id="progress-{{ section.title|slugify }}"><a href="#{{ section.title|slugify }}"><span class="progress-section"></span></a></li>
+{% for post in section.posts %}
+<li id="progress-{{ section.title|slugify }}-{{ loop.index }}"><a href="#{{ section.title|slugify }}-{{ loop.index }}"><span></span></a></li>
+{% endfor %}
+{% endfor %}
+</ul>
+
 </div>
 
 <div class="page_container">

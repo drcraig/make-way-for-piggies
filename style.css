@@ -25,6 +25,45 @@ a.page-turn#next {
     right:0;
 }
 
+#top-title a {
+    text-decoration: none;
+    color: #777777;
+}
+
+div#progress {
+    padding-top: 10px;
+    height: 20px;
+}
+
+#progress ul {
+    list-style-type: none;
+    display: inline;
+}
+
+#progress li {
+    list-style-type: none;
+    float: left;
+}
+
+#progress span {
+    width: 2px;
+    display: block;
+    background-color: #DDDDDD;
+    height: 6px;
+}
+
+#progress span.progress-section {
+    background-color: #AAAAAA;
+}
+
+#progress span.progress-post {
+    height: 5px;
+}
+
+#progress span.current {
+    background-color: red;
+}
+
 div.page {
     vertical-align: top;
 }
