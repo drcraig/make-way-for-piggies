@@ -8,8 +8,7 @@ function getHash() {
 }
 
 function setHash(hash) {
-    if (hash === "#cover")
-    {
+    if (hash === "#cover") {
         window.location.hash = "";
     } else {
         window.location.hash = hash;

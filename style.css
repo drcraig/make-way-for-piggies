@@ -4,7 +4,10 @@ body > div {
 
 div#main {
     width: 610px;
-    margin-left: 80px;
+    position: fixed;
+    left: 15%;
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
 div#left-click, div#right-click {
@@ -15,14 +18,21 @@ a.page-turn {
     display: block;
     position: fixed;
     top: 0;
+    background-color: #888888;
+    vertical-align: middle;
+    text-align: center;
 }
 
 a.page-turn#prev {
     left:0;
+    width: 15%;
+    height: 100%;
 }
 
 a.page-turn#next {
     right:0;
+    width: 15%;
+    height: 100%;
 }
 
 #top-title a {
@@ -66,6 +76,7 @@ div#progress {
 
 div.page {
     vertical-align: top;
+    width: 480px;
 }
 
 #cover {
