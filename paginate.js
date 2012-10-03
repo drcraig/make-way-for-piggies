@@ -24,32 +24,54 @@ function setCurrentPage(hash) {
     $("#progress #progress-"+hash.slice(1)+" span").addClass("current");
 }
 
-$(document).ready( function() {
-  setCurrentPage(getHash());  
-
-  $("#next").click(function(event){
-    event.preventDefault();
+function goToNextPage() {
     var hash = getHash();
     var curr_page = $(".page"+hash);
     var next_page = curr_page.next();
     if (next_page.length !== 0) {
       setCurrentPage('#'+next_page.attr('id'));
     }
-  });
+}
 
-  $("#prev").click(function(event){
-    event.preventDefault();
+function goToPrevPage() {
     var hash = getHash();
     var curr_page = $(".page"+hash);
     var prev_page = curr_page.prev();
     if (prev_page.length !== 0) {
       setCurrentPage('#'+prev_page.attr('id'));
     }
+}
+
+$(document).ready( function() {
+  setCurrentPage(getHash());  
+
+  $("#next").click(function(event){
+    event.preventDefault();
+    goToNextPage();
   });
 
-  $("#progress a").click(function(event){
+  $(document).keydown(function(event) {
+    var code = (event.keyCode ? event.keyCode : event.which);
+    if(code == 74 || code == 39) {
+        goToNextPage();
+    }
+    if(code == 75 || code == 37) {
+        goToPrevPage();
+    }
+  });
+
+  $("#prev").click(function(event){
     event.preventDefault();
-    setCurrentPage(event.currentTarget.hash); 
+    goToPrevPage();
+  });
+
+  $("a").click(function(event){
+    var href = event.currentTarget.getAttribute("href");
+    if (href[0] === "#") {
+        event.preventDefault();
+        setCurrentPage(href);
+    }
+    
   });
 });
 
