@@ -83,6 +83,11 @@ div.page {
     text-align: center;
 }
 
+#toc {
+    text-align: left;
+    margin-left: 100px;
+}
+
 h2 {
     font-size: 24px;
 }

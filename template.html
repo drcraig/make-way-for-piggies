@@ -20,7 +20,6 @@
 <div id="progress">
 <ul>
 <li id="progress-cover"><a href="#cover"><span></span></a></li>
-<li id="progress-toc"><a href="#toc"><span></span></a></li>
 <li id="progress-preface"><a href="#preface"><span></span></a></li>
 {% for section in sections %}
 <li id="progress-{{ section.title|slugify }}"><a href="#{{ section.title|slugify }}"><span class="progress-section"></span></a></li>
@@ -48,9 +47,7 @@
 <p class="author">Dan Craig</p>
 </div>
 
-</div>
-
-<div class="page" id="toc">
+<div id="toc">
 <h2>Contents</h2>
 <ul>
 <li><a href="#preface">Preface</a></li>
@@ -58,6 +55,8 @@
 <li><a href="#{{ section.title|slugify }}">{{ section.title }}</a></li>
 {% endfor %}
 </ul>
+</div>
+
 </div>
 
 <div class="page" id="preface">
