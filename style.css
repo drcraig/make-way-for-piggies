@@ -34,7 +34,6 @@ div.page-turn {
     height: 100%;
     background-color: #CFDBC5;
     width: 120px;
-    padding-top: 80px;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -55,6 +54,9 @@ div.page-turn#next {
 .page-turn a {
     color: inherit;
     text-decoration: none;
+    display: block;
+    height: 100%;
+    line-height: 300px;
 }
 
 .page-turn a:hover {
