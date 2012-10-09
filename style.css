@@ -1,38 +1,56 @@
+body {
+    font-family: 'Fenix', serif;
+    line-height: 1.8em;
+    margin: 0px;
+    text-align: center;
+    color: #2B2B2B;
+}
+
 body > div {
     display: inline-block;
+    text-align: left;
 }
 
 div#main {
-    width: 610px;
-    position: fixed;
-    left: 15%;
-    margin-left: 50px;
-    margin-right: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-top: 0px;
+    background-color: white;
+    display: inline-block;
 }
 
 div#left-click, div#right-click {
-    width:15%;
+    /*width:15%;*/
 }
 
 a.page-turn {
-    display: block;
+    /*display: block;*/
+    float: left;
     position: fixed;
     top: 0;
-    background-color: #888888;
     vertical-align: middle;
     text-align: center;
+    padding: 40px;
+    height: 100%;
+    background-color: #CFDBC5;
+    color: inherit;
+    text-decoration: none;
 }
 
 a.page-turn#prev {
     left:0;
-    width: 15%;
-    height: 100%;
 }
 
 a.page-turn#next {
     right:0;
-    width: 15%;
-    height: 100%;
+}
+
+#top-title {
+    font-family: 'Rosario', sans-serif;
+}
+
+div#top-title {
+    margin: 5px 0px 0px;
 }
 
 #top-title a {
@@ -40,9 +58,14 @@ a.page-turn#next {
     color: #777777;
 }
 
+div#progress-wrapper {
+    text-align: center;
+}
+
 div#progress {
     padding-top: 10px;
     height: 20px;
+    display: inline-block;
 }
 
 #progress ul {
@@ -64,6 +87,7 @@ div#progress {
 
 #progress span.progress-section {
     background-color: #AAAAAA;
+    width: 4px;
 }
 
 #progress span.progress-post {
@@ -74,9 +98,12 @@ div#progress {
     background-color: red;
 }
 
+div.page_container {
+    background-color: white;
+}
+
 div.page {
     vertical-align: top;
-    width: 480px;
 }
 
 #cover {
@@ -89,17 +116,29 @@ div.page {
 }
 
 h2 {
-    font-size: 24px;
+    font-size: 30px;
 }
 
 .timestamp {
-    font-size: 12px;
+    font-size: 14px;
+    color: #1F1F1F;
 }
 
-.media {
-    
+img.media {
+   width: 320px; 
+   float: right;
+   margin-left: 10px;
+   margin-top: 18px;
 }
 
-.section, .post {
-    font-size: 18px;
+.section {
+}
+
+.section, .post, #preface {
+    font-size: 22px;
+    max-width: 480px;
+}
+
+.page p {
+    word-wrap: break-word;
 }
