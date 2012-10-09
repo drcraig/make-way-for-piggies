@@ -12,29 +12,30 @@ body > div {
 }
 
 div#main {
-    padding-left: 50px;
-    padding-right: 50px;
-    margin-top: 0px;
     background-color: white;
     display: inline-block;
 }
 
-div#left-click, div#right-click {
-    /*width:15%;*/
+#controls {
+    font-size: 33px;
+    color: #b6bca4;
 }
 
 a.page-turn {
-    /*display: block;*/
     float: left;
     position: fixed;
     top: 0;
     vertical-align: middle;
     text-align: center;
-    padding: 40px;
+    padding: 120px 40px;
     height: 100%;
     background-color: #CFDBC5;
     color: inherit;
     text-decoration: none;
+}
+
+a.page-turn:hover {
+    color: #2B2B2B;
 }
 
 a.page-turn#prev {
@@ -110,9 +111,31 @@ div.page {
     text-align: center;
 }
 
+.subtitle p, .edited-by p {
+    line-height: 1.5em;
+    margin: 5px 0px;
+}
+
+p.author {
+   font-size: 1.2em;
+   line-height: 1.1em;
+   margin: 3px 0px 15px;
+}
+
 #toc {
     text-align: left;
     margin-left: 100px;
+    line-height: 1.4em;
+    font-size: 1.2em;
+}
+
+div#toc {
+    margin-top: 60px;
+}
+
+#toc a {
+    text-decoration: none;
+    color: inherit;
 }
 
 h2 {
