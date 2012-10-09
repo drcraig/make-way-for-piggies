@@ -17,22 +17,29 @@ function setHash(hash) {
 
 function setCurrentPage(hash) {
     $(".page").hide();
-    $(".page"+hash).show();
+    var current_page = $(".page"+hash);
+    current_page.show();
     setHash(hash);
     $("#progress span").removeClass("current");
     $("#progress #progress-"+hash.slice(1)+" span").addClass("current");
     
-    var next_page = $(".page"+hash).next()
-    var prev_page = $(".page"+hash).prev()
+    var next_page = current_page.next();
+    var prev_page = current_page.prev();
     if (next_page.length == 0) {
-        $('.page-turn#next a').hide()
+        $('.page-turn#next a').hide();
     } else {
-        $('.page-turn#next a').show()
+        $('.page-turn#next a').show();
     }
     if (prev_page.length == 0) {
-        $('.page-turn#prev a').hide()
+        $('.page-turn#prev a').hide();
     } else {
-        $('.page-turn#prev a').show()
+        $('.page-turn#prev a').show();
+    }
+
+    if( window.location.hash == "" ) {
+        $('#top-title').hide();
+    } else {
+        $('#top-title').show();
     }
 }
 
