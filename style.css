@@ -25,29 +25,34 @@ div#main {
     color: #b6bca4;
 }
 
-a.page-turn {
+div.page-turn {
     float: left;
     position: fixed;
     top: 0;
     vertical-align: middle;
     text-align: center;
-    padding: 120px 40px;
     height: 100%;
     background-color: #CFDBC5;
+    width: 120px;
+    padding-top: 80px;
+}
+
+div.page-turn#prev {
+    left:0;
+}
+
+div.page-turn#next {
+    right:0;
+    float: right;
+}
+
+.page-turn a {
     color: inherit;
     text-decoration: none;
 }
 
-a.page-turn:hover {
+.page-turn a:hover {
     color: #2B2B2B;
-}
-
-a.page-turn#prev {
-    left:0;
-}
-
-a.page-turn#next {
-    right:0;
 }
 
 #top-title {

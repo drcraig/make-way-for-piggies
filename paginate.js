@@ -21,6 +21,19 @@ function setCurrentPage(hash) {
     setHash(hash);
     $("#progress span").removeClass("current");
     $("#progress #progress-"+hash.slice(1)+" span").addClass("current");
+    
+    var next_page = $(".page"+hash).next()
+    var prev_page = $(".page"+hash).prev()
+    if (next_page.length == 0) {
+        $('.page-turn#next a').hide()
+    } else {
+        $('.page-turn#next a').show()
+    }
+    if (prev_page.length == 0) {
+        $('.page-turn#prev a').hide()
+    } else {
+        $('.page-turn#prev a').show()
+    }
 }
 
 function goToNextPage() {
