@@ -164,6 +164,10 @@ img.media {
     margin-top: 80px;
 }
 
+div#copyright {
+    display: inline-block;
+}
+
 #copyright a {
     color: #999999;
     text-decoration: none;
