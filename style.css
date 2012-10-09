@@ -154,12 +154,27 @@ img.media {
    margin-top: 18px;
 }
 
-.section {
+#copyright {
+    font-size: 14px;
+    color: #999999;
+    line-height: 1.4em;
+}
+
+#copyright {
+    margin-top: 80px;
+}
+
+#copyright a {
+    color: #999999;
+    text-decoration: none;
+}
+
+#copyright, .section, .post, #preface {
+    max-width: 480px;
 }
 
 .section, .post, #preface {
     font-size: 22px;
-    max-width: 480px;
 }
 
 .page p {
