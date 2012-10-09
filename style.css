@@ -6,6 +6,10 @@ body {
     color: #2B2B2B;
 }
 
+a {
+    color: inherit;
+}
+
 body > div {
     display: inline-block;
     text-align: left;
@@ -173,11 +177,11 @@ div#copyright {
     text-decoration: none;
 }
 
-#copyright, .section, .post, #preface {
+#copyright, .section, .post, #preface, #bonus {
     max-width: 480px;
 }
 
-.section, .post, #preface {
+.section, .post, #preface, #bonus {
     font-size: 22px;
 }
 
