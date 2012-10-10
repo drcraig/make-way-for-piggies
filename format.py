@@ -103,14 +103,12 @@ with open("context.json", 'w') as f:
 t = env.get_template('template.tex')
 
 tex = t.render(context)
-with open("PreggoPosts.tex", 'w') as f:
+with open("MakeWayForPiggies.tex", 'w') as f:
     f.write(tex.encode('utf-8'))
 
 html_template = html_env.get_template('template.html')
 html = html_template.render(context)
 
-with open("PreggoPosts.html", 'w') as f:
+with open("index.html", 'w') as f:
     f.write(html.encode('utf-8'))
 
-#print tex
-#print len(posts)

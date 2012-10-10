@@ -1,7 +1,7 @@
 all: html pdf
 
-pdf: PreggoPosts.tex
-	pdflatex PreggoPosts.tex
+pdf: MakeWayForPiggies.tex
+	pdflatex MakeWayForPiggies.tex
 
 html: format.py
 	python format.py
