@@ -1,3 +1,17 @@
+@font-face {
+      font-family: 'Fenix';
+      font-style: normal;
+      font-weight: 400;
+      src: local('Fenix'), local('Fenix-Regular'), url(fonts/Fenix/Fenix-Regular.ttf) format('truetype');
+}
+
+@font-face {
+      font-family: 'Rosario';
+      font-style: normal;
+      font-weight: 400;
+      src: local('Rosario Regular'), local('Rosario-Regular'), url(fonts/Rosario/Rosario-Regular.ttf) format('truetype');
+}
+
 body {
     font-family: 'Fenix', serif;
     line-height: 1.8em;
