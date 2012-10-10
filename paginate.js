@@ -41,6 +41,7 @@ function setCurrentPage(hash) {
     } else {
         $('#top-title').show();
     }
+    window.scrollTo(0);
 }
 
 function goToNextPage() {
