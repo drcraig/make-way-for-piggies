@@ -135,11 +135,12 @@ div.page {
 
 .subtitle p, .edited-by p {
     line-height: 1.5em;
+    font-size: 1.2em;
     margin: 5px 0px;
 }
 
 p.author {
-   font-size: 1.2em;
+   font-size: 1.5em;
    line-height: 1.1em;
    margin: 3px 0px 15px;
 }
