@@ -144,14 +144,14 @@ p.author {
    margin: 3px 0px 15px;
 }
 
-#toc, #about {
+#toc, #about, #acknowledgements {
     text-align: left;
     margin-left: 100px;
     line-height: 1.4em;
     font-size: 1.2em;
 }
 
-div#toc, div#about {
+div#toc, div#about, div#acknowledgements {
     margin-top: 60px;
 }
 
@@ -195,7 +195,7 @@ div#copyright {
     text-decoration: none;
 }
 
-#about, #copyright, .section, .post, #preface, #bonus {
+#about, #acknowledgements, #copyright, .section, .post, #preface, #bonus {
     max-width: 480px;
 }
 
