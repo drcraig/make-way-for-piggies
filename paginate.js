@@ -93,6 +93,15 @@ $(document).ready( function() {
     }
     
   });
+
+  $(window).resize(function() {
+    $('iframe').each(function(index, value) {
+      var width = $(value.parentElement).width()-80;
+      var height = Math.round(0.75 * width);
+      value.setAttribute('width', width);
+      value.setAttribute('height', height);
+    });
+  });
 });
 
 

@@ -52,7 +52,7 @@ Facebook Posts of his Mom</p>
 <p class="author">Dan Craig</p>
 </div>
 
-<div id="about">
+<div id="about" class="cover-section">
 <h2>About This Book</h2>
 <p>During her pregnancy with her son Huxley, Sally Honda shared her joys, pains,
 frustrations, and excitement with her friends on Facebook through prose and poetry.
@@ -68,7 +68,7 @@ by pressing the j and k keys.</p>
 <a href="http://github.com/drcraig/make-way-for-piggies">Github</a>.</p>
 </div>
 
-<div id="toc">
+<div id="toc" class="cover-section">
 <h2>Contents</h2>
 <ul>
 <li><a href="#preface">Preface</a></li>
@@ -78,7 +78,7 @@ by pressing the j and k keys.</p>
 </ul>
 </div>
 
-<div id="acknowledgements">
+<div id="acknowledgements" class="cover-section">
 <h2>Acknowledgements</h2>
 <p>Thanks to <a href="https://twitter.com/chrisguidry">Chris Guidry</a>
 for help writing the JavaScript to scrape the posts from Facebook.</p>
@@ -90,14 +90,14 @@ and <a href="http://www.gyford.com/">Phil Gyford</a>, especially his
 <a href="http://guardian.gyford.com/">Today's Guardian</a>.
 </div>
 
-<div id="copyright">
+<div id="copyright" class="cover-section">
 &copy; Copyright 2012 Sally Honda and Dan Craig<br/>
 This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
 </div>
 
 </div>
 
-<div class="page" id="preface">
+<div class="page section" id="preface">
 <h2>Preface</h2>
 
 {{ preface|p }}
@@ -117,23 +117,24 @@ This work is licensed under a <a rel="license" href="http://creativecommons.org/
 {{ post.humantimestamp }}
 </div>
 
+<div class="post">
+{{ post.text|p_br }}
+</div>
+
 {% if post.image %}
-<img class="media" src="manual/{{ post.image }}" width="70%" />
+<img class="media" src="manual/{{ post.image }}" />
 {% endif %}
 
 {% if post.youtube_id %}
 <iframe class="media" width="480" height="360" src="http://www.youtube.com/embed/{{ post.youtube_id }}" frameborder="0" allowfullscreen></iframe>
 {% endif %}
 
-<div class="post">
-{{ post.text|p_br }}
-</div>
 </div>
 {% endfor %}
 
 {% endfor %}
 
-<div class="page" id="bonus">
+<div class="page section" id="bonus">
 <h2>Bonus</h2>
 <p>By sheer coincidence, we later learned there was once a children's
 television show in the UK called, of all things, 
