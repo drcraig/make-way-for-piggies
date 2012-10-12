@@ -112,6 +112,7 @@ div#progress {
 #progress li {
     list-style-type: none;
     float: left;
+    margin-bottom: 1px;
 }
 
 #progress span {
@@ -126,20 +127,19 @@ div#progress {
     width: 4px;
 }
 
-#progress span.progress-post {
-    height: 5px;
-}
-
 #progress span.current {
     background-color: red;
 }
 
 div.page_container {
     background-color: white;
+    text-align: center;
 }
 
 div.page {
     vertical-align: top;
+    text-align: left;
+    display: inline-block;
 }
 
 #cover {
@@ -165,7 +165,6 @@ p.author {
 
 .cover-section {
     text-align: left;
-    margin-left: 80px;
     line-height: 1.4em;
     font-size: 1.2em;
 }
@@ -216,6 +215,7 @@ div#copyright {
 
 .cover, .cover-section, .section, .post {
     max-width: 480px;
+    display: inline-block;
 }
 
 .page p {
@@ -230,7 +230,7 @@ and (max-device-width : 640px) {
     }
 
     .title {
-        font-size: 30px;
+        font-size: 26px;
     }
 
     #top-title {
