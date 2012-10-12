@@ -140,6 +140,8 @@ div.page {
     vertical-align: top;
     text-align: left;
     display: inline-block;
+    width: 100%;
+    max-width: 480px;
 }
 
 #cover {
