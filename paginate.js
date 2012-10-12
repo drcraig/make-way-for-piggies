@@ -91,8 +91,17 @@ $(document).ready( function() {
         event.preventDefault();
         setCurrentPage(href);
     }
-    
   });
+
+  $('body').on('swipeleft',  function(e){goToNextPage();})
+            .on('swiperight', function(e){goToPrevPage();});
+
+  $('body').on('movestart', function(e) {
+      if ((e.distX > e.distY && e.distX < -e.distY) ||
+                (e.distX < e.distY && e.distX > -e.distY)) {
+              e.preventDefault();
+                }
+      });
 
   $(window).resize(function() {
     $('iframe').each(function(index, value) {
@@ -103,5 +112,4 @@ $(document).ready( function() {
     });
   });
 });
-
 
