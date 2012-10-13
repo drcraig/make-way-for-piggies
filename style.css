@@ -35,6 +35,7 @@ div#main {
     display: inline-block;
     margin-left: 120px;
     margin-right: 120px;
+    width: 80%;
     padding: 0px 40px;
 }
 
@@ -51,7 +52,8 @@ div.page-turn {
     text-align: center;
     height: 100%;
     background-color: #CFDBC5;
-    width: 120px;
+    width: 10%;
+    min-width: 30px;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -154,8 +156,7 @@ div.page {
 }
 
 .subtitle p, .edited-by p {
-    line-height: 1.5em;
-    font-size: 1.2em;
+    line-height: 1.4em;
     margin: 5px 0px;
 }
 
@@ -228,7 +229,7 @@ div#copyright {
 and (min-device-width : 320px) 
 and (max-device-width : 640px) {
     body {
-        font-size: 16px;
+        font-size: 20px;
         min-height: 480px;
     }
 
@@ -249,10 +250,11 @@ and (max-device-width : 640px) {
         display: none;
     }
     div#main {
-        margin-left: 15px;
-        margin-right: 15px;
+        margin-left: 5px;
+        margin-right: 5px;
         padding: inherit;
         max-width: 290px;
+        width: 100%;
     }
     #progress span {
         width: 1px;
@@ -268,10 +270,12 @@ and (max-device-width : 640px) {
     }
     .cover-section {
         margin-left: 0px;
+        font-size: inherit;
     }
 
     .cover, .cover-section, .section, .post {
         max-width: none;
+        display: block;
     }
 
     #copyright {
@@ -295,4 +299,11 @@ and (max-device-width : 640px) {
        margin-left: 0px;
        display: block;
     }
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) {
+    /* Styles */
 }
