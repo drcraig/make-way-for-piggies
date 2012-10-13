@@ -33,10 +33,14 @@ body > div {
 div#main {
     background-color: white;
     display: inline-block;
-    margin-left: 120px;
-    margin-right: 120px;
+    margin-left: 20px;
+    margin-right: 20px;
     width: 80%;
     padding: 0px 40px;
+}
+
+div#nav {
+    text-align: center;
 }
 
 #controls {
@@ -85,10 +89,14 @@ div.page-turn#next {
 
 #top-title {
     font-family: 'Rosario', sans-serif;
+    font-size: 16px;
 }
 
 div#top-title {
     margin: 5px 0px 0px;
+    width: 480px;
+    display: inline-block;
+    text-align: left;
 }
 
 #top-title a {
@@ -108,7 +116,8 @@ div#progress {
 
 #progress ul {
     list-style-type: none;
-    display: inline;
+    display: inline-block;
+    margin: 0px;
 }
 
 #progress li {
@@ -218,7 +227,7 @@ div#copyright {
 
 .cover, .cover-section, .section, .post {
     max-width: 480px;
-    display: inline-block;
+    display: block;
 }
 
 .page p {
