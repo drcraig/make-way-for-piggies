@@ -118,6 +118,8 @@ div#progress {
     list-style-type: none;
     display: inline-block;
     margin: 0px;
+    padding: 0px;
+    display: inline-block;
 }
 
 #progress li {
@@ -275,7 +277,7 @@ and (max-device-width : 640px) {
     }
 
     #progress span.current {
-        width: 2px;
+        width: 1px;
     }
     .cover-section {
         margin-left: 0px;
