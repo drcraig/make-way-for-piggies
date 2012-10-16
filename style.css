@@ -155,6 +155,7 @@ div.page {
     display: inline-block;
     width: 100%;
     max-width: 480px;
+    margin-bottom: 80px;
 }
 
 #cover {
