@@ -8,7 +8,7 @@ LATEX_SUBS = (
     (re.compile(r'([{}_#%&$])'), r'\\\1'),
     (re.compile(r'~'), r'\~{}'),
     (re.compile(r'\^'), r'\^{}'),
-    (re.compile(r'"(.*?)"'), r"``\1''"),
+    (re.compile(r'"(.*?)"', re.DOTALL), r"``\1''"),
     (re.compile(r'"'), r"''"),
     (re.compile(r'-{4,}'), r'--- '),
     (re.compile(r'\.{4,}'), r'\\dots. '),
