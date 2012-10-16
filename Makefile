@@ -5,3 +5,8 @@ pdf: MakeWayForPiggies.tex
 
 html: format.py
 	python format.py
+
+clean:
+	rm *.pyc
+	rm *.aux
+	rm *log
