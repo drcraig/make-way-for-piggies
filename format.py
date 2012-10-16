@@ -10,7 +10,9 @@ LATEX_SUBS = (
     (re.compile(r'\^'), r'\^{}'),
     (re.compile(r'"(.*?)"'), r"``\1''"),
     (re.compile(r'"'), r"''"),
-    (re.compile(r'\.\.\.'), r'\\dots '),
+    (re.compile(r'-{4,}'), r'--- '),
+    (re.compile(r'\.{4,}'), r'\\dots. '),
+    (re.compile(r'\.{3}'), r'\\dots '),
     (re.compile(r'LaTeX'), r'\\LaTeX\\'),
 )
 
