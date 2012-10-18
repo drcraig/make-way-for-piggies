@@ -1,12 +1,16 @@
-all: html pdf
+all : html pdf
+html : index.html
+pdf : MakeWayForPiggies.pdf
 
-pdf : MakeWayForPiggies.tex
+.PHONY : all html pdf
+
+MakeWayForPiggies.pdf : MakeWayForPiggies.tex
 	pdflatex MakeWayForPiggies.tex
 
 MakeWayForPiggies.tex : context.json template.tex hashtag_hyphenation.json
 	python render.py --context=context.json --template=template.tex --hyphenation=hashtag_hyphenation.json --output=MakeWayForPiggies.tex
 
-html : context.json template.html 
+index.html : context.json template.html 
 	python render.py --context=context.json --template=template.html --output=index.html
 
 context.json : MergedPosts.json sections.json preface.txt
