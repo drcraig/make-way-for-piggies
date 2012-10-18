@@ -1,7 +1,7 @@
 import argparse
 import json as simplejson
 
-def generate_context(posts, sections, preface):
+def generate_context(posts, sections, preface, version=''):
 
     prev_start = None
     sections.reverse()
@@ -15,7 +15,7 @@ def generate_context(posts, sections, preface):
         section['posts'] = s_posts 
     sections.reverse()
 
-    context = {'sections': sections, 'preface': preface}
+    context = {'sections': sections, 'preface': preface, 'version': version}
     return context
 
 if __name__ == "__main__":
@@ -23,6 +23,7 @@ if __name__ == "__main__":
     parser.add_argument("--posts", required=True)
     parser.add_argument("--sections", required=True)
     parser.add_argument("--preface", required=True)
+    parser.add_argument("--version", default="DRAFT")
     parser.add_argument("--output")
     args = parser.parse_args()
 
@@ -35,7 +36,7 @@ if __name__ == "__main__":
     with open(args.preface) as f:
         preface = f.read()
 
-    context = generate_context(posts, sections, preface)
+    context = generate_context(posts, sections, preface, args.version)
 
     print args.output
     if args.output:
