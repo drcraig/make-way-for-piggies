@@ -1,10 +1,2 @@
-Better make process that isolates the build products
-
-Put pictures in a "pictures" or "images" folder instead of "manual"
-
-Fabric to upload only build products, no DS_Store or other crap. 
-Also remove any obsolete files on new deployments.
-
-Mobile friendliness. 
-
+Wiggens image
 Upload to github

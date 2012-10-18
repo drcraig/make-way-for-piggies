@@ -5,6 +5,8 @@
 *.swp
 *.swo
 *.*~
-PreggoPosts.tex
-PreggoPosts.pdf
-PreggoPosts.html
+context.json
+MakeWayForPiggies.tex
+MakeWayForPiggies.pdf
+MakeWayForPiggies.html
+build/*
