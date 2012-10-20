@@ -6,6 +6,7 @@ pdf : build/MakeWayForPiggies.pdf
 
 build/MakeWayForPiggies.pdf : MakeWayForPiggies.tex static_files
 	pdflatex -output-directory=build MakeWayForPiggies.tex
+	pdflatex -output-directory=build MakeWayForPiggies.tex
 
 MakeWayForPiggies.tex : context.json template.tex hashtag_hyphenation.json build
 	python render.py --context=context.json --template=template.tex --hyphenation=hashtag_hyphenation.json --output=MakeWayForPiggies.tex
