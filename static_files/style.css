@@ -167,6 +167,10 @@ div.page {
     font-size: 44px;
 }
 
+img#wiggins {
+    margin-bottom: 10px;
+}
+
 .subtitle p, .edited-by p {
     line-height: 1.4em;
     margin: 5px 0px;
