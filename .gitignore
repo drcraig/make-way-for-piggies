@@ -5,6 +5,7 @@
 *.swp
 *.swo
 *.*~
+.DS_Store
 context.json
 MakeWayForPiggies.tex
 MakeWayForPiggies.pdf
