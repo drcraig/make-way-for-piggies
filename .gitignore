@@ -11,3 +11,4 @@ MakeWayForPiggies.tex
 MakeWayForPiggies.pdf
 MakeWayForPiggies.html
 build/*
+.venv/
